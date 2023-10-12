@@ -125,7 +125,7 @@ class drawer extends StatelessWidget {
           ),
           const ListTile(
             title: Text(
-              'Cài đặt1',
+              'Cài đặt',
               style: TextStyle(color: Colors.grey),
             ),
             leading: Icon(Icons.settings),
