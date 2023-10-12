@@ -45,8 +45,8 @@ class UserInfoPage extends StatelessWidget {
             const Divider(),
             buildUserInfo('Ngày sinh', '27/06/2003'),
             const SizedBox(height: 20),
-            buildButton('Thông tin thống kê'),
-            buildButton('Danh sách đơn hàng'),
+            buildButton('Thông tin thống kê', onClick: () {}),
+            buildButton('Danh sách đơn hàng', onClick: () {}),
           ],
         ),
       ),
@@ -74,18 +74,21 @@ class UserInfoPage extends StatelessWidget {
     );
   }
 
-  Widget buildButton(String buttonInfo) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(buttonInfo),
-          const Icon(
-            Icons.arrow_forward_ios_rounded,
-            color: Colors.grey,
-          )
-        ],
+  Widget buildButton(String buttonInfo, {required Function() onClick}) {
+    return GestureDetector(
+      onTap: onClick,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(buttonInfo),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.grey,
+            )
+          ],
+        ),
       ),
     );
   }
