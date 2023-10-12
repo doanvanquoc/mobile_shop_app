@@ -1,7 +1,7 @@
 # Mobile Shop App
 
 Project app bán điện thoại di động
-Thành viên: 
+## Thành viên: 
 1. Đoàn Văn Quốc
 2. Lê Hữu Thành
 3. Nguyễn Huỳnh Vũ Hưng
