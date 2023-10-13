@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_shop_app/widgets/orders.dart';
 
 class UserProfilePage extends StatelessWidget {
   const UserProfilePage({super.key});
@@ -10,38 +11,7 @@ class UserProfilePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            //Container Avatar, Tên và Hạng
-            Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
-              child: const ListTile(
-                leading: CircleAvatar(
-                  child: Text('Q'),
-                ),
-                title: Text('Đoàn Văn Quốc'),
-                subtitle: Text('Hạng Kim Cương'),
-              ),
-            ),
-            const SizedBox(height: 20),
-            buildUserInfo('Họ tên', 'Đoàn Văn Quốc'),
-            const Divider(),
-            buildUserInfo('SĐT', '0388780052'),
-            const Divider(),
-            buildUserInfo('Địa chỉ', 'Tân Bình'),
-            const Divider(),
-            buildUserInfo('Email', 'vanquoc.dev@gmail.com'),
-            const Divider(),
-            buildUserInfo('Ngày sinh', '27/06/2003'),
-            const SizedBox(height: 20),
-            buildButton('Thông tin thống kê', onClick: () {}),
-            buildButton('Danh sách đơn hàng', onClick: () {}),
-          ],
-        ),
-      ),
+      body: const Padding(padding: EdgeInsets.all(8.0), child: Orders()),
     );
   }
 
@@ -62,25 +32,6 @@ class UserProfilePage extends StatelessWidget {
             ],
           )
         ],
-      ),
-    );
-  }
-
-  Widget buildButton(String buttonInfo, {required Function() onClick}) {
-    return GestureDetector(
-      onTap: onClick,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(buttonInfo),
-            const Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Colors.grey,
-            )
-          ],
-        ),
       ),
     );
   }
