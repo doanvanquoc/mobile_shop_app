@@ -45,13 +45,14 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
           child: TabBarView(
             controller: tabController,
             children: const [
-              //Code 1 hàm buildOrder thôi, truyền vào các tham số cần thiết, rồi gọi hàm đó trong 3 Widget này (bọc trong Coulmn)
+              //Code 1 hàm buildOrder thôi, truyền vào các tham số cần thiết, rồi gọi hàm đó trong 3 Widget này (bọc trong Coulmn. 1 Column truyền 2 cái buildOrder)
               Text('Thay widget này bằng 2 đơn hàng đang giao'),
               Text('Thay widget này bằng 2 đơn hàng đã giao'),
               Text('Thay widget này bằng 2 đơn hàng đã huỷ')
             ],
           ),
-        )
+        ),
+        //Dưới này là cái button Tải thêm (ElevatedButton)
       ],
     );
   }
