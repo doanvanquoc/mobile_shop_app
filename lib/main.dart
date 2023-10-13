@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_shop_app/pages/order_list.dart';
 import 'package:mobile_shop_app/pages/user_info.dart';
 
 void main() {
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const UserInfoPage(),
+      //home: const UserInfoPage(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const UserInfoPage(),
+        "/orderlist": (context) => const OderListPage(),
+      },
     );
   }
 }

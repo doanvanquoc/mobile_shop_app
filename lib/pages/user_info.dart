@@ -49,7 +49,10 @@ class UserInfoPage extends StatelessWidget {
             buildUserInfo('Ngày sinh', '27/06/2003'),
             const SizedBox(height: 20),
             buildButton('Thông tin thống kê', onClick: () {}),
-            buildButton('Danh sách đơn hàng', onClick: () {}),
+            buildButton('Danh sách đơn hàng', onClick: () {
+              Navigator.popUntil(context, (route) => route.isFirst);
+              Navigator.pushNamed(context, '/orderlist');
+            }),
           ],
         ),
       ),
