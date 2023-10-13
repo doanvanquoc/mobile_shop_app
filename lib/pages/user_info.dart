@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'drawer.dart';
+import 'package:mobile_shop_app/widgets/drawer.dart';
 
 class UserInfoPage extends StatelessWidget {
   const UserInfoPage({super.key});
@@ -12,7 +11,7 @@ class UserInfoPage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
       ),
-      drawer: const drawer(),
+      drawer: const MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
