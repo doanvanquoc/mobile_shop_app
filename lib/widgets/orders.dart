@@ -8,7 +8,7 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> with TickerProviderStateMixin {
-  //
+  //Tạo tab controller
   late TabController tabController;
 
   @override
@@ -27,6 +27,7 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        //Tạo search box
         TextField(
           decoration: InputDecoration(
             hintText: 'Nhập tên sản phẩm cần tìm kiếm',
@@ -37,10 +38,12 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
           ),
         ),
         const SizedBox(height: 10),
+        //Tạo tabbar
         TabBar(
           tabs: const [Text('Đang giao'), Text('Đã giao'), Text('Đã huỷ')],
           controller: tabController,
         ),
+        //Tạo tabbarview
         Expanded(
           child: TabBarView(
             controller: tabController,
