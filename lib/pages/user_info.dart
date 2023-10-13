@@ -45,7 +45,9 @@ class UserInfoPage extends StatelessWidget {
             const Divider(),
             buildUserInfo('Ngày sinh', '27/06/2003'),
             const SizedBox(height: 20),
-            buildButton('Thông tin thống kê', onClick: () {}),
+            buildButton('Thông tin thống kê', onClick: () {
+              
+            }),
             buildButton('Danh sách đơn hàng', onClick: () {}),
           ],
         ),
