@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UserInfoPage extends StatelessWidget {
-  const UserInfoPage({super.key});
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,14 +9,6 @@ class UserInfoPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Tin nhắn'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Tài khoản'),
-        ],
-        currentIndex: 2,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

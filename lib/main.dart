@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_shop_app/pages/user_info.dart';
+import 'package:mobile_shop_app/pages/user_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const UserInfoPage(),
+      home: const UserProfilePage(),
     );
   }
 }
