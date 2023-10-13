@@ -11,27 +11,9 @@ class UserProfilePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
       ),
-      body: const Padding(padding: EdgeInsets.all(8.0), child: Orders()),
-    );
-  }
-
-  Widget buildUserInfo(String infoType, String info) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(infoType),
-          Row(
-            children: [
-              Text(info),
-              const Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.grey,
-              ),
-            ],
-          )
-        ],
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Orders(),
       ),
     );
   }
