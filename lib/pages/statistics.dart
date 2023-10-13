@@ -1,23 +1,16 @@
 import "package:fl_chart/fl_chart.dart";
 import "package:flutter/material.dart";
 
+import "../models/product.dart";
+
 class ThongKeScreen extends StatefulWidget {
   const ThongKeScreen({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _ThongKeScreenState createState() => _ThongKeScreenState();
+  State<ThongKeScreen> createState() => _ThongKeScreenState();
 }
 
-class Product {
-  final String name;
-  final String imageUrl;
-  final double price;
-
-  Product({required this.name, required this.imageUrl, required this.price});
-}
-
-final List<Product> viewedProducts = [
+List<Product> viewedProducts = [
   Product(name: "Áo sơ mi", imageUrl: "assets/img/avatar.jpg", price: 200000),
   Product(name: "Quần jean", imageUrl: "assets/img/avatar.jpg", price: 350000),
   Product(name: "Quần jeans", imageUrl: "assets/img/avatar.jpg", price: 350000),
