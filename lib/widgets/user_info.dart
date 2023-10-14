@@ -29,7 +29,6 @@ class UserInfo extends StatelessWidget {
                   DateTime(2003, 5, 23).toString().substring(0, 10),
                   1,
                   "0938523503",
-                  context: context,
                   textStyle: Theme.of(context)
                       .textTheme
                       .titleMedium!
@@ -43,7 +42,7 @@ class UserInfo extends StatelessWidget {
 
   Column info(String tenHienThi, String tenDangNhap, String ngaySinh,
       int gioiTinh, String sdt,
-      {required BuildContext context, required TextStyle textStyle}) {
+      {required TextStyle textStyle}) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
