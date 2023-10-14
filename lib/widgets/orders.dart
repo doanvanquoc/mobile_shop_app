@@ -26,6 +26,7 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         //Tạo search box
         TextField(

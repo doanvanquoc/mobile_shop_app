@@ -12,16 +12,22 @@ class UserProfilePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: const [
-            UserInfo(),
-            SizedBox(
-              height: 20,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                UserInfo(),
+                SizedBox(
+                  height: 20,
+                ),
+                Expanded(child: Orders()),
+              ],
             ),
-            Flexible(child: Orders(), fit: FlexFit.loose,),
-          ],
+          ),
         ),
       ),
     );
