@@ -31,6 +31,7 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
         //Tạo search box
         TextField(
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(8),
             hintText: 'Nhập tên sản phẩm cần tìm kiếm',
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

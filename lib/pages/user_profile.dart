@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_shop_app/widgets/orders.dart';
+import 'package:mobile_shop_app/widgets/statistics.dart';
 import 'package:mobile_shop_app/widgets/user_info.dart';
 
 class UserProfilePage extends StatelessWidget {
@@ -24,6 +25,8 @@ class UserProfilePage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
+                Statistics(),
+                SizedBox(height: 20),
                 Expanded(child: Orders()),
               ],
             ),
