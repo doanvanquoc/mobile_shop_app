@@ -20,7 +20,7 @@ class UserProfilePage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Expanded(child: Orders()),
+            Flexible(child: Orders(), fit: FlexFit.loose,),
           ],
         ),
       ),

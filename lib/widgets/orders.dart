@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_shop_app/main.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
@@ -49,151 +48,122 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
           child: TabBarView(
             controller: tabController,
             children: [
-              Column(
+              ListView(
                 children: [
                   buildOrder(
                       'B0101',
                       '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Con Mèo Mập Địt',
+                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
                       '20000000',
-                      'Đang Giao'),
+                      'Đang Giao',
+                      context),
                   buildOrder(
                       'A177013',
                       '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Con Mèo Ốm Địt',
+                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
                       '1000',
-                      'Đang Giao')
+                      'Đang Giao',
+                      context),
+                  ElevatedButton(
+                    child: const Text('Tải thêm'),
+                    onPressed: () {},
+                  ),
                 ],
               ),
-              //Code 1 hàm buildOrder thôi, truyền vào các tham số cần thiết, rồi gọi hàm đó trong 3 Widget này (bọc trong Coulmn. 1 Column truyền 2 cái buildOrder)
-              Column(
+              ListView(
                 children: [
                   buildOrder(
                       'D2101',
                       '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Con Mèo Mập Địt',
+                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
                       '20000000',
-                      'Đã Giao'),
+                      'Đã Giao',
+                      context),
                   buildOrder(
                       'E98013',
                       '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Con Mèo Ốm Địt',
+                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
                       '6000',
-                      'Đã Giao')
+                      'Đã Giao',
+                      context),
+                  ElevatedButton(
+                    child: const Text('Tải thêm'),
+                    onPressed: () {},
+                  ),
                 ],
               ),
-              Column(
+              ListView(
                 children: [
                   buildOrder(
                       'B0101',
                       '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Con Mèo Mập Địt',
+                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Iphone 12',
                       '20000000',
-                      'Đã Hủy'),
+                      'Đã Hủy',
+                      context),
                   buildOrder(
                       'A177013',
                       '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Con Mèo Ốm Địt',
+                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 13',
                       '1 Jack',
-                      'Đã Hủy')
+                      'Đã Hủy',
+                      context),
+                  ElevatedButton(
+                    child: const Text('Tải thêm'),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ],
           ),
         ),
-        ElevatedButton(
-          child: Text('Tải thêm'),
-          onPressed: () {},
-        )
       ],
     );
   }
 }
 
-Widget buildOrder(String ID_Order, String dateOrder, String infoDS,
-    String totalCost, String status) {
-  return Container(
-    padding: EdgeInsets.all(1.0),
-    child: Row(
-      children: <Widget>[
-        Expanded(
-            child: Row(
-          children: <Widget>[
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(),
-                  color: Color.fromARGB(245, 251, 234, 184)),
-              margin: EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Mã hóa đơn: " +
-                            ID_Order +
-                            "\nNgày lập hóa đơn: " +
-                            dateOrder,
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                      Expanded(
-                          child: Container(
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(), color: Colors.white),
-                                child: Column(children: [
-                                  Text(
-                                    status,
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    width: 100,
-                                  )
-                                ]),
-                              )
-                            ]),
-                      ))
-                    ],
-                  ),
-                  const Divider(),
-                  Text("DS sản phẩm:"),
-                  Text(
-                    infoDS,
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  const Divider(),
-                  Text(
-                    "Thành tiền: " + totalCost,
-                    style:
-                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                ],
-              ),
-            )),
-          ],
-        ))
-      ],
+Widget buildOrder(String idOrder, String dateOrder, String infoDS,
+    String totalCost, String status, BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    child: Container(
+      padding: const EdgeInsets.all(8),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(),
+        borderRadius: BorderRadius.circular(10),
+        color: const Color.fromARGB(245, 251, 234, 184),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Mã hóa đơn: $idOrder\nNgày lập hóa đơn: $dateOrder",
+            style: Theme.of(context).textTheme.titleMedium,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const Divider(thickness: 1),
+          const Text("DS sản phẩm:"),
+          Text(
+            infoDS,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(
+            height: 10.0,
+          ),
+          const Divider(),
+          Text(
+            "Thành tiền: $totalCost",
+            style: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(
+            height: 10.0,
+          ),
+        ],
+      ),
     ),
   );
 }
