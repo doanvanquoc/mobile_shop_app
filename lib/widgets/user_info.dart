@@ -15,10 +15,12 @@ class UserInfo extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CircleAvatar(
-              radius: 50,
-              child: Text(
-                "Q",
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(50)),
+              child: Image.network(
+                "https://anhdep123.com/wp-content/uploads/2021/02/anh-avatar-hai-huoc.jpg",
+                height: 100.0,
+                width: 100.0,
               ),
             ),
             const SizedBox(width: 10),
