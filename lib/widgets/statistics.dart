@@ -114,74 +114,14 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                     padding: const EdgeInsets.only(left: 14, top: 6),
                     child: Column(
                       children: [
-                        const Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "Số lượng sản phẩm đã mua:",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 91, 99, 108),
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "$totalProd",
-                            style: const TextStyle(
-                              color: Colors.black87,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
+                        buildProductText(
+                            "Số lượng sản phẩm đã mua:", "$totalProd"),
                         const SizedBox(height: 15),
-                        const Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "Số đơn hàng thành công:",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 91, 99, 108),
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "$totalProd",
-                            style: const TextStyle(
-                              color: Colors.black87,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
+                        buildProductText(
+                            "Số đơn hàng thành công:", "$totalProd"),
                         const SizedBox(height: 15),
-                        const Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "Tổng chi tiêu:",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 91, 99, 108),
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "$formattedTotalExpense VND",
-                            style: const TextStyle(
-                              color: Colors.black87,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
+                        buildProductText(
+                            "Tổng chi tiêu:", "$formattedTotalExpense VND"),
                       ],
                     ),
                   ),
@@ -192,4 +132,34 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       ),
     );
   }
+}
+
+Widget buildProductText(String title, String content) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 91, 99, 108),
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      const SizedBox(height: 5),
+      Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          content,
+          style: const TextStyle(
+            color: Colors.black87,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ],
+  );
 }
