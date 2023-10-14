@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_shop_app/widgets/drawer.dart';
 import 'package:mobile_shop_app/widgets/orders.dart';
 import 'package:mobile_shop_app/widgets/statistics.dart';
 import 'package:mobile_shop_app/widgets/user_info.dart';
@@ -9,9 +10,16 @@ class UserProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Thông Tin Cá Nhân'),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 5),
+            child: Icon(Icons.settings),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -33,6 +41,7 @@ class UserProfilePage extends StatelessWidget {
           ),
         ),
       ),
+      drawer: const MyDrawer(),
     );
   }
 }

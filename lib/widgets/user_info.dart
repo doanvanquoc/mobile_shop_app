@@ -55,7 +55,7 @@ class UserInfo extends StatelessWidget {
           style: textStyle,
         ),
         Text(
-          "Tên đăng nhập: $tenDangNhap",
+          "Tài khoản: $tenDangNhap",
           style: textStyle,
         ),
         Text(
