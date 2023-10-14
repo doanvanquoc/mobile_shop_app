@@ -6,6 +6,7 @@ class UserInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //Thêm màu và bo gó cho container
       decoration: BoxDecoration(
           color: Colors.amber.shade200,
           borderRadius: BorderRadius.circular(20)),
