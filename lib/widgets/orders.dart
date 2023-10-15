@@ -8,133 +8,136 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> with TickerProviderStateMixin {
-  //Tạo tab controller
-  late TabController tabController;
+  // //Tạo tab controller
+  // late TabController tabController;
 
-  @override
-  void initState() {
-    tabController = TabController(length: 3, vsync: this, initialIndex: 0);
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   tabController = TabController(length: 3, vsync: this, initialIndex: 0);
+  //   super.initState();
+  // }
 
-  @override
-  void dispose() {
-    tabController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   tabController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      // crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'DANH SÁCH ĐƠN HÀNG',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 10),
-        //Tạo search box
-        TextField(
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(8),
-            hintText: 'Nhập tên sản phẩm cần tìm kiếm',
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+    return DefaultTabController(
+      length: 3,
+      child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'DANH SÁCH ĐƠN HÀNG',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const SizedBox(height: 10),
+          //Tạo search box
+          TextField(
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(8),
+              hintText: 'Nhập tên sản phẩm cần tìm kiếm',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              suffixIcon: const Icon(Icons.search),
             ),
-            suffixIcon: const Icon(Icons.search),
           ),
-        ),
-        const SizedBox(height: 10),
-        //Tạo tabbar
-        TabBar(
-          tabs: const [Text('Đang giao'), Text('Đã giao'), Text('Đã huỷ')],
-          controller: tabController,
-        ),
-        //Tạo tabbarview
-        Expanded(
-          child: TabBarView(
-            controller: tabController,
-            children: [
-              ListView(
-                children: [
-                  buildOrder(
-                      'B0101',
-                      '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
-                      '20000000',
-                      'Đang Giao',
-                      context),
-                  buildOrder(
-                      'A177013',
-                      '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
-                      '1000',
-                      'Đang Giao',
-                      context),
-                  ElevatedButton(
-                    child: Text(
-                      'Tải thêm',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              ListView(
-                children: [
-                  buildOrder(
-                      'D2101',
-                      '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
-                      '20000000',
-                      'Đã Giao',
-                      context),
-                  buildOrder(
-                      'E98013',
-                      '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
-                      '6000',
-                      'Đã Giao',
-                      context),
-                  ElevatedButton(
-                    child: Text(
-                      'Tải thêm',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              ListView(
-                children: [
-                  buildOrder(
-                      'B0101',
-                      '12/5/2099',
-                      '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Iphone 12',
-                      '20000000',
-                      'Đã Hủy',
-                      context),
-                  buildOrder(
-                      'A177013',
-                      '5/5/2099',
-                      '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 13',
-                      '1 Jack',
-                      'Đã Hủy',
-                      context),
-                  ElevatedButton(
-                    child: Text(
-                      'Tải thêm',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ],
+          const SizedBox(height: 10),
+          //Tạo tabbar
+          const TabBar(
+            tabs: [Text('Đang giao'), Text('Đã giao'), Text('Đã huỷ')],
+            // controller: tabController,
           ),
-        ),
-      ],
+          //Tạo tabbarview
+          Expanded(
+            child: TabBarView(
+              // controller: tabController,
+              children: [
+                ListView(
+                  children: [
+                    buildOrder(
+                        'B0101',
+                        '12/5/2099',
+                        '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
+                        '20000000',
+                        'Đang Giao',
+                        context),
+                    buildOrder(
+                        'A177013',
+                        '5/5/2099',
+                        '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
+                        '1000',
+                        'Đang Giao',
+                        context),
+                    ElevatedButton(
+                      child: Text(
+                        'Tải thêm',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                ListView(
+                  children: [
+                    buildOrder(
+                        'D2101',
+                        '12/5/2099',
+                        '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
+                        '20000000',
+                        'Đã Giao',
+                        context),
+                    buildOrder(
+                        'E98013',
+                        '5/5/2099',
+                        '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 15 Pro Max',
+                        '6000',
+                        'Đã Giao',
+                        context),
+                    ElevatedButton(
+                      child: Text(
+                        'Tải thêm',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                ListView(
+                  children: [
+                    buildOrder(
+                        'B0101',
+                        '12/5/2099',
+                        '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Iphone 12',
+                        '20000000',
+                        'Đã Hủy',
+                        context),
+                    buildOrder(
+                        'A177013',
+                        '5/5/2099',
+                        '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 13',
+                        '1 Jack',
+                        'Đã Hủy',
+                        context),
+                    ElevatedButton(
+                      child: Text(
+                        'Tải thêm',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
