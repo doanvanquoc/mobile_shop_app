@@ -23,7 +23,6 @@ class UserProfilePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -35,13 +34,22 @@ class UserProfilePage extends StatelessWidget {
                 ),
                 Statistics(),
                 SizedBox(height: 20),
-                Expanded(child: Orders()),
+                Orders(),
               ],
             ),
           ),
         ),
       ),
       drawer: const MyDrawer(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 2,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag), label: 'Shop'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Cá nhân'),
+        ],
+      ),
     );
   }
 }

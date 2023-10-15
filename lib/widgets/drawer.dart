@@ -29,7 +29,7 @@ class MyDrawer extends StatelessWidget {
             decoration: const BoxDecoration(color: Colors.amber),
           ),
           const ListTile(
-            leading: Icon(Icons.house),
+            leading: Icon(Icons.home),
             title: Text("Trang chủ"),
           ),
           const ListTile(

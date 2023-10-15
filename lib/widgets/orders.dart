@@ -25,6 +25,8 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return DefaultTabController(
       length: 3,
       child: Column(
@@ -54,12 +56,27 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
             // controller: tabController,
           ),
           //Tạo tabbarview
-          Expanded(
+          SizedBox(
+            height: height > width ? height * 0.5 : width * 0.5,
             child: TabBarView(
               // controller: tabController,
               children: [
                 ListView(
                   children: [
+                    buildOrder(
+                        'B0101',
+                        '12/5/2099',
+                        '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
+                        '20000000',
+                        'Đang Giao',
+                        context),
+                    buildOrder(
+                        'B0101',
+                        '12/5/2099',
+                        '- Nokia Ultra Plus Infinity \n- Samsung Galaxy DeepDark \n- Xiaomi Redmi Note 6',
+                        '20000000',
+                        'Đang Giao',
+                        context),
                     buildOrder(
                         'B0101',
                         '12/5/2099',
