@@ -7,7 +7,7 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.amber.shade200,
+          color: const Color.fromARGB(245, 251, 234, 184),
           borderRadius: BorderRadius.circular(20)),
       height: 150,
       child: Padding(

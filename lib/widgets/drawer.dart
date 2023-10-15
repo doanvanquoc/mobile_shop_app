@@ -9,8 +9,14 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           UserAccountsDrawerHeader(
-            accountName: const Text("Nguyễn Văn A"),
-            accountEmail: const Text("nguyenvana@gmail.com"),
+            accountName: Text(
+              "Nguyễn Văn A",
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            accountEmail: Text(
+              "nguyenvana@gmail.com",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(

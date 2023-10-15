@@ -73,7 +73,10 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
                       'Đang Giao',
                       context),
                   ElevatedButton(
-                    child: const Text('Tải thêm'),
+                    child: Text(
+                      'Tải thêm',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -95,7 +98,10 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
                       'Đã Giao',
                       context),
                   ElevatedButton(
-                    child: const Text('Tải thêm'),
+                    child: Text(
+                      'Tải thêm',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -117,7 +123,10 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
                       'Đã Hủy',
                       context),
                   ElevatedButton(
-                    child: const Text('Tải thêm'),
+                    child: Text(
+                      'Tải thêm',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     onPressed: () {},
                   ),
                 ],
