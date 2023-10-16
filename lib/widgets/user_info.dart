@@ -8,7 +8,7 @@ class UserInfo extends StatelessWidget {
     return Container(
       //Thêm màu và bo gó cho container
       decoration: BoxDecoration(
-          color: Colors.amber.shade200,
+          color: const Color.fromARGB(245, 251, 234, 184),
           borderRadius: BorderRadius.circular(20)),
       height: 150,
       child: Padding(
@@ -56,7 +56,7 @@ class UserInfo extends StatelessWidget {
           style: textStyle,
         ),
         Text(
-          "Tên đăng nhập: $tenDangNhap",
+          "Tài khoản: $tenDangNhap",
           style: textStyle,
         ),
         Text(
