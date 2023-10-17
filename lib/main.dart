@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mobile Shop App',
       theme: ThemeData(
-          primarySwatch: Colors.amber,
-          fontFamily: GoogleFonts.poppins().fontFamily),
+        primarySwatch: Colors.amber,
+        fontFamily: GoogleFonts.openSans().fontFamily,
+      ),
       home: const UserProfilePage(),
     );
   }

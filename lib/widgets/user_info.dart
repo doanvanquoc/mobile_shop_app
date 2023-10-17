@@ -7,7 +7,7 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.amber.shade200,
+          color: const Color.fromARGB(245, 251, 234, 184),
           borderRadius: BorderRadius.circular(20)),
       height: 150,
       child: Padding(
@@ -15,10 +15,12 @@ class UserInfo extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CircleAvatar(
-              radius: 50,
-              child: Text(
-                "Q",
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(50)),
+              child: Image.network(
+                "https://anhdep123.com/wp-content/uploads/2021/02/anh-avatar-hai-huoc.jpg",
+                height: 100.0,
+                width: 100.0,
               ),
             ),
             const SizedBox(width: 10),
@@ -53,7 +55,7 @@ class UserInfo extends StatelessWidget {
           style: textStyle,
         ),
         Text(
-          "Tên đăng nhập: $tenDangNhap",
+          "Tài khoản: $tenDangNhap",
           style: textStyle,
         ),
         Text(
