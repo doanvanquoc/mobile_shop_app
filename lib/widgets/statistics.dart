@@ -36,7 +36,7 @@ class _StatisticsState extends State<Statistics> {
     return formatCurrency.format(totalExpense);
   }
 
-  bool _isExpanded = false;
+  bool _isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class _StatisticsState extends State<Statistics> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "THỐNG KÊ TÀI CHÍNH",
+                "THỐNG KÊ CHI TIÊU",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               _isExpanded
