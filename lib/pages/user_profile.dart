@@ -17,26 +17,24 @@ class UserProfilePage extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 5),
-            child: Icon(Icons.settings),
+            child: Icon(Icons.notifications),
           ),
         ],
       ),
       body: SingleChildScrollView(
-        child: SizedBox(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const [
-                UserInfo(),
-                SizedBox(
-                  height: 20,
-                ),
-                Statistics(),
-                SizedBox(height: 20),
-                Orders(),
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              UserInfo(),
+              SizedBox(
+                height: 20,
+              ),
+              Statistics(),
+              SizedBox(height: 20),
+              Orders(),
+            ],
           ),
         ),
       ),

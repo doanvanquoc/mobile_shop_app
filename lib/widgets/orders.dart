@@ -51,8 +51,36 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
           ),
           const SizedBox(height: 10),
           //Tạo tabbar
-          const TabBar(
-            tabs: [Text('Đang giao'), Text('Đã giao'), Text('Đã huỷ')],
+          TabBar(
+            tabs: [
+              Column(
+                children: const [
+                  Icon(
+                    Icons.delivery_dining,
+                    color: Colors.amberAccent,
+                  ),
+                  Text('Đang giao'),
+                ],
+              ),
+              Column(
+                children: const [
+                  Icon(
+                    Icons.check,
+                    color: Colors.green,
+                  ),
+                  Text('Đã giao'),
+                ],
+              ),
+              Column(
+                children: const [
+                  Icon(
+                    Icons.cancel,
+                    color: Colors.red,
+                  ),
+                  Text('Đã huỷ'),
+                ],
+              ),
+            ],
             // controller: tabController,
           ),
           //Tạo tabbarview
