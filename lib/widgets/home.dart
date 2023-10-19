@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:mobile_shop_app/widgets/item_row.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,13 +23,7 @@ class HomePage extends StatelessWidget {
       children: List.generate(
         col,
         (index) {
-          return Container(
-            width: (width - col * 20) / col,
-            height: 100,
-            margin: const EdgeInsets.all(10),
-            color: Color.fromRGBO(Random().nextInt(255), Random().nextInt(255),
-                Random().nextInt(255), 1),
-          );
+          return ItemRow(col: col, width: width);
         },
       ),
     );
