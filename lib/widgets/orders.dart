@@ -8,20 +8,7 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> with TickerProviderStateMixin {
-  // //Tạo tab controller
-  // late TabController tabController;
-
-  // @override
-  // void initState() {
-  //   tabController = TabController(length: 3, vsync: this, initialIndex: 0);
-  //   super.initState();
-  // }
-
-  // @override
-  // void dispose() {
-  //   tabController.dispose();
-  //   super.dispose();
-  // }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +38,41 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
           ),
           const SizedBox(height: 10),
           //Tạo tabbar
-          const TabBar(
-            tabs: [Text('Đang giao'), Text('Đã giao'), Text('Đã huỷ')],
-            // controller: tabController,
+          TabBar(
+            tabs: [
+              Column(
+                children: const [
+                  Icon(
+                    Icons.delivery_dining,
+                    color: Colors.amberAccent,
+                  ),
+                  Text('Đang giao'),
+                ],
+              ),
+              Column(
+                children: const [
+                  Icon(
+                    Icons.check,
+                    color: Colors.green,
+                  ),
+                  Text('Đã giao'),
+                ],
+              ),
+              Column(
+                children: const [
+                  Icon(
+                    Icons.cancel,
+                    color: Colors.red,
+                  ),
+                  Text('Đã huỷ'),
+                ],
+              ),
+            ],
           ),
           //Tạo tabbarview
           SizedBox(
             height: height > width ? height * 0.5 : width * 0.5,
             child: TabBarView(
-              // controller: tabController,
               children: [
                 ListView(
                   children: [
@@ -138,7 +151,7 @@ class _OrdersState extends State<Orders> with TickerProviderStateMixin {
                         'A177013',
                         '5/5/2099',
                         '- Nokia SuS \n- Samsung Galaxy DeepLight \n- Iphone 13',
-                        '1 Jack',
+                        '100000',
                         'Đã Hủy',
                         context),
                     ElevatedButton(
