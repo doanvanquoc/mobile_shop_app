@@ -4,6 +4,8 @@ import 'package:mobile_shop_app/pages/user_profile.dart';
 import 'package:mobile_shop_app/widgets/home.dart';
 import 'package:mobile_shop_app/widgets/list_entry.dart';
 
+import 'widgets/list_entry.dart';
+
 void main() {
   runApp(const MyApp());
 }

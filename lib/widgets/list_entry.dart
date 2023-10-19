@@ -14,21 +14,21 @@ class ListEntry extends StatelessWidget {
       ],)
     );
   }
-
-  Container entryMethod( Stringgit c) {
+}
+  Container entryMethod( String img,String title, String desc) {
     return Container(
     decoration: BoxDecoration(
-      borderRadius: BorderRadiugit 
-      color: Colors.amber[100]git 
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.amber[100],
     ),
     child: Padding(
-        padding: const EdgeInsegit 
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListTile(
-          title: const Text("Tigit 
-          subtitle: const Text(git 
+          title: const Text("Tiêu đề"),
+          subtitle: const Text("Tóm tắt 01"),
           leading: ClipRRect(
-            borderRadius: constgit ular(50)),
-            child: Image.asset(git 
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
+            child: Image.asset(
               "assets/img/avatar.jpg",
               //fit: BoxFit.cover,
             ),
