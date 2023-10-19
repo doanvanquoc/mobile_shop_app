@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_shop_app/pages/user_profile.dart';
 import 'package:mobile_shop_app/widgets/home.dart';
+import 'package:mobile_shop_app/widgets/list_entry.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         fontFamily: GoogleFonts.openSans().fontFamily,
       ),
-      home: const HomePage(),
+      home: const UserProfilePage(),
     );
   }
 }

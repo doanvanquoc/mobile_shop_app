@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-
+import '../models/entry.dart';
 class ListEntry extends StatelessWidget {
   const ListEntry({super.key});
 
@@ -29,3 +30,12 @@ class ListEntry extends StatelessWidget {
     );
   }
 }
+List<Entry> viewEntry = [
+  Entry(img: "", title: "", desc: ""),
+  Entry(img: "", title: "", desc: ""),
+  Entry(img: "", title: "", desc: ""),
+  Entry(img: "", title: "", desc: ""),
+  Entry(img: "", title: "", desc: ""),
+  Entry(img: "", title: "", desc: ""),
+];
+

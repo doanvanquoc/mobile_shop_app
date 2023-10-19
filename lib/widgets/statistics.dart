@@ -157,3 +157,33 @@ class _StatisticsState extends State<Statistics> {
     );
   }
 }
+
+Widget buildProductText(String title, String content) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 91, 99, 108),
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      const SizedBox(height: 5),
+      Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          content,
+          style: const TextStyle(
+            color: Colors.black87,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ],
+  );
+}
