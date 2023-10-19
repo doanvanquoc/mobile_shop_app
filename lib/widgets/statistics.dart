@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
 import 'package:intl/intl.dart';
 
-class StatisticsScreen extends StatefulWidget {
-  const StatisticsScreen({super.key});
+class Statistics extends StatefulWidget {
+  const Statistics({super.key});
 
   @override
-  State<StatisticsScreen> createState() => _StatisticsScreenState();
+  State<Statistics> createState() => _StatisticsState();
 }
 
-class _StatisticsScreenState extends State<StatisticsScreen> {
+class _StatisticsState extends State<Statistics> {
   final List<int> numOfProd = [10, 15, 12, 18, 20, 22, 25, 23, 21, 19, 17, 16];
 
   final List<int> totalOrder = [
@@ -36,100 +36,124 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
     return formatCurrency.format(totalExpense);
   }
 
-  bool _isExpanded = false;
+  bool _isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 243, 243, 247),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _isExpanded = !_isExpanded;
+            });
+          },
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(7),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _isExpanded = !_isExpanded;
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(5),
-                  minimumSize: const Size(double.infinity, 80),
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.only(left: 9),
-                      child: Text(
-                        "THỐNG KÊ TÀI CHÍNH",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ),
-                    _isExpanded
-                        ? const Icon(
-                            Icons.expand_less,
-                            color: Colors.black,
-                            size: 22,
-                          )
-                        : const Icon(
-                            Icons.expand_more,
-                            color: Colors.black,
-                            size: 22,
-                          ),
-                  ],
-                ),
+              Text(
+                "THỐNG KÊ CHI TIÊU",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              const SizedBox(height: 7),
-              if (_isExpanded)
-                Container(
-                  alignment: Alignment.topLeft,
-                  height: 207,
-                  padding: const EdgeInsets.all(9),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 14, top: 6),
-                    child: Column(
-                      children: [
-                        buildProductText(
-                            "Số lượng sản phẩm đã mua:", "$totalProd"),
-                        const SizedBox(height: 15),
-                        buildProductText(
-                            "Số đơn hàng thành công:", "$totalProd"),
-                        const SizedBox(height: 15),
-                        buildProductText(
-                            "Tổng chi tiêu:", "$formattedTotalExpense VND"),
-                      ],
+              _isExpanded
+                  ? const Icon(
+                      Icons.expand_less,
+                      color: Colors.black,
+                      size: 22,
+                    )
+                  : const Icon(
+                      Icons.expand_more,
+                      color: Colors.black,
+                      size: 22,
                     ),
-                  ),
-                )
             ],
           ),
         ),
-      ),
+        const SizedBox(height: 7),
+        if (_isExpanded)
+          Container(
+            padding: const EdgeInsets.all(9),
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 1,
+                  blurRadius: 4,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Số lượng sản phẩm đã mua:",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 91, 99, 108),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    "$totalProd",
+                    style: const TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    "Số đơn hàng thành công:",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 91, 99, 108),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    "$totalProd",
+                    style: const TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    "Tổng chi tiêu:",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 91, 99, 108),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    "$formattedTotalExpense VND",
+                    style: const TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+      ],
     );
   }
 }

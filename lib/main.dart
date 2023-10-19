@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile_shop_app/widgets/statistics.dart';
+import 'package:mobile_shop_app/pages/user_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mobile Shop App',
       theme: ThemeData(
-          primarySwatch: Colors.amber,
-          fontFamily: GoogleFonts.poppins().fontFamily),
-      home: const StatisticsScreen(),
-      //home: const UserProfilePage(),
+        primarySwatch: Colors.amber,
+        fontFamily: GoogleFonts.openSans().fontFamily,
+      ),
+      home: const UserProfilePage(),
     );
   }
 }
