@@ -7,22 +7,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return buildHomePage(col: 5, row: 5);
+    var width = MediaQuery.of(context).size.width;
+    return SingleChildScrollView(
+      child: buildHomePage(col: 3, row: 4, width: width),
+    );
   }
 
-  GridView buildHomePage({required int col, required int row}) {
-    var ran = Random();
-    return GridView.builder(
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: col),
-      itemCount: col * row,
-      itemBuilder: (context, index) {
-        return Container(
-          color: Color.fromRGBO(
-              ran.nextInt(255), ran.nextInt(255), ran.nextInt(255), 1),
-          margin: const EdgeInsets.all(5),
-        );
-      },
+  Widget buildHomePage(
+      {required int col, required int row, required double width}) {
+    return Column(
+        children: List.generate(row, (index) => buildItemRow(col, width)));
+  }
+
+  Widget buildItemRow(int col, double width) {
+    return Row(
+      children: List.generate(
+        col,
+        (index) {
+          return Container(
+            width: (width - col * 20) / col,
+            height: 100,
+            margin: const EdgeInsets.all(10),
+            color: Color.fromRGBO(Random().nextInt(255), Random().nextInt(255),
+                Random().nextInt(255), 1),
+          );
+        },
+      ),
     );
   }
 }
